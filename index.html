@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071322">
+  <meta name="description" content="Ein eigenständiges Car-Soccer-Spiel für den Browser – mit Tastatur und Controller.">
+  <title>Turbo Torjäger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Turbo Torjäger Startseite"><span class="brand-mark">⚽</span><span>TURBO <b>TORJÄGER</b></span></a>
+      <div class="top-actions"><span class="live"><i></i> ARCADE</span><button id="soundBtn" class="icon-btn" type="button" title="Sound ein- oder ausschalten" aria-label="Sound ein- oder ausschalten">♫</button></div>
+    </header>
+
+    <section class="game-wrap" aria-label="Spielbereich">
+      <div class="scoreboard">
+        <div class="team blue-team"><span class="team-name">BLAU</span><strong id="blueScore">0</strong></div>
+        <div class="clock"><span id="clock">2:00</span><small id="status">ANPFIFF IN 3</small></div>
+        <div class="team orange-team"><strong id="orangeScore">0</strong><span class="team-name">ORANGE</span></div>
+      </div>
+      <div class="canvas-frame">
+        <canvas id="game" width="1200" height="720" aria-label="Car-Soccer-Spielfeld"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <div class="eyebrow">BROWSER ARCADE · 1 SPIELER</div>
+            <h1>Mach das<br><em>goldene Tor.</em></h1>
+            <p>Rase dem Ball hinterher, lade deinen Boost auf und überliste den orangefarbenen Bot.</p>
+            <button id="startBtn" class="primary-btn" type="button">SPIEL STARTEN <span>→</span></button>
+            <div class="overlay-hint">Controller anschließen oder Tastatur verwenden</div>
+          </div>
+        </div>
+        <div id="goalFlash" class="goal-flash" aria-live="polite"></div>
+      </div>
+      <div class="below-bar"><span id="controllerStatus"><i class="status-dot"></i> Controller wird gesucht …</span><button id="restartBtn" type="button">NEUES MATCH ↻</button></div>
+    </section>
+
+    <section class="controls">
+      <div class="controls-heading"><span>SO SPIELST DU</span><span class="key-note">GAMEPAD API · DIREKT IM BROWSER</span></div>
+      <div class="control-grid">
+        <div class="control-item"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><p><b>Fahren & lenken</b><small>oder linke Stick-Achse</small></p></div>
+        <div class="control-item"><span class="keycap wide">SHIFT</span><p><b>Boost</b><small>Gamepad: RB / B</small></p></div>
+        <div class="control-item"><span class="keycap">SPACE</span><p><b>Sprung</b><small>Gamepad: A</small></p></div>
+        <div class="control-item"><span class="keycap">R</span><p><b>Ball zurücksetzen</b><small>Gamepad: Y</small></p></div>
+      </div>
+      <p class="footnote">Für Gamepads: einmal verbinden und danach eine Taste drücken. Unterstützt standardisierte Controller (z. B. Xbox- und PlayStation-Controller) in aktuellen Browsern.</p>
+    </section>
+    <footer><span>Ein eigenständiges kleines Browser-Spiel</span><span>WASD + CONTROLLER SUPPORTED</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
